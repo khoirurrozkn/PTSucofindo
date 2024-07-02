@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_category_id')->nullable(false);
-            $table->string('name', 100)->nullable(false);
-            $table->integer('price')->nullable(false);
-            $table->string('image', 255)->default('https://res.cloudinary.com/dobjgx7ps/image/upload/v1719945313/default-no-image-product.png');
+            $table->string('name', 100)->unique()->nullable(false);
+            $table->unsignedInteger('price')->nullable(false);
+            $table->string('image', 255)->unique()->default('https://res.cloudinary.com/dobjgx7ps/image/upload/v1719945313/default-no-image-product.png');
             $table->timestamps();
         });
     }
