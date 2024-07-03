@@ -50,9 +50,11 @@ class CategoryProductController extends Controller
     }
 
     public function updateById(CategoryProductRequest $categoryProductRequest, CategoryProduct $categoryProduct){
+        $request = $categoryProductRequest->validated();
+
         $updatedData = $this->categoryProductService->updateById(
             $categoryProduct,
-            $categoryProductRequest['name']
+            $request['name']
         );
 
         return Dto::success(
