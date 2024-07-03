@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('name', 100)->unique()->nullable(false);
             $table->unsignedInteger('price')->nullable(false);
             $table->string('image', 255)->unique()->default('https://res.cloudinary.com/dobjgx7ps/image/upload/v1719945313/default-no-image-product.png');
+            // untuk penyimpanan foto bisa di upload ke cloud dari FE, lalu FE mengirim link cloud image tersebut ke BE
+
+            $table->foreign("product_category_id")->references("id")->on("category_products")->onDelete("cascade");
             $table->timestamps();
         });
     }
