@@ -29,4 +29,8 @@ class ProductServiceImplement implements ProductService{
 
         return $instanceModel;
     }
+
+    public function deleteById($instanceModel){
+        return $instanceModel->delete();
+    }
 }

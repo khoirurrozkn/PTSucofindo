@@ -63,4 +63,14 @@ class CategoryProductController extends Controller
             new CategoryProductResource($updatedData)
         );
     }
+
+    public function deleteById(CategoryProduct $categoryProduct){
+        $deletedData = $this->categoryProductService->deleteById($categoryProduct);
+
+        return Dto::success(
+            Response::HTTP_OK, 
+            "Success delete category product", 
+            null
+        );
+    }
 }

@@ -69,4 +69,14 @@ class ProductController extends Controller
             new ProductResource($updatedData)
         );
     }
+    
+    public function deleteById(Product $product){
+        $deletedData = $this->productService->deleteById($product);
+
+        return Dto::success(
+            Response::HTTP_OK, 
+            "Success delete product", 
+            null
+        );
+    }
 }

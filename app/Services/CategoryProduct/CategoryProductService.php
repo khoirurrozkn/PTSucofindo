@@ -6,4 +6,5 @@ interface CategoryProductService{
     public function create($name);
     public function getWithPaginate();
     public function updateById($instanceModel, $name);
+    public function deleteById($instanceModel);
 }

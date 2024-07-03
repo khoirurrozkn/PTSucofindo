@@ -23,4 +23,8 @@ class CategoryProductServiceImplement implements CategoryProductService{
 
         return $instanceModel;
     }
+
+    public function deleteById($instanceModel){
+        return $instanceModel->delete();
+    }
 }

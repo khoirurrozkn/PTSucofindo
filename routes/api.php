@@ -14,6 +14,7 @@ Route::prefix('/category-product')->middleware('auth:api')->group(function () {
     Route::get('/', [CategoryProductController::class, 'getWithPaginate']);
     Route::get('/{categoryProduct:id}', [CategoryProductController::class, 'getById']);
     Route::put('/{categoryProduct:id}', [CategoryProductController::class, 'updateById']);
+    Route::delete('/{categoryProduct:id}', [CategoryProductController::class, 'deleteById']);
 });
 
 Route::prefix('/product')->middleware('auth:api')->group(function () {
@@ -22,4 +23,5 @@ Route::prefix('/product')->middleware('auth:api')->group(function () {
     Route::get('/', [ProductController::class, 'getWithPaginate']);
     Route::get('/{product:id}', [ProductController::class, 'getById']);
     Route::put('/{product:id}', [ProductController::class, 'updateById']);
+    Route::delete('/{product:id}', [ProductController::class, 'deleteById']);
 });
