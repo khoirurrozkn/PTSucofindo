@@ -47,7 +47,7 @@ return Application::configure(basePath: dirname(__DIR__))
         });
 
         $exceptions->renderable(function (Throwable $e) {
-            Log::error('Error : '. $e->getMessage());
+            Log::error('Message : '. $e->getMessage() . "\nFile : " . $e->getFile() . "\nLine : " . $e->getLine());
 
             return Dto::error(Response::HTTP_INTERNAL_SERVER_ERROR, 'Server error, please try again later');
         });
